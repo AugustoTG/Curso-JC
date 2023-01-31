@@ -1,5 +1,10 @@
 let counteiner = 0;
 
 const increase = () => {
-    co
+    counteiner++
+    counteiner--
+    console.log(counteiner)
 }
+counteiner = document.
+
+counteiner.innerText = counteiner

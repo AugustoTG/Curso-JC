@@ -24,10 +24,13 @@ main{
     display: flex;
     padding-top: 10vh;
     left: 50%;
-    transform: translate(-52%);
+    transform: translate(-50%);
 }
 .conteiner_counter{
     font-size: 50px;
+}
+#counter{
+    padding: 0px 10px;
 }
 div > button{
     font-size: 50px;
@@ -38,5 +41,7 @@ div > button{
     color: #fff;
 }
 div > button:hover{
-    
+    color: rgba(40, 130, 247);
+    background-color: #fff;
+    box-shadow: rgba(34, 34, 34, 0.199) 1px 1px 1px;
 }

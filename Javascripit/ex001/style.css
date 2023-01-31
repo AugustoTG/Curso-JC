@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    padding: 30px;
+    font-weight: 600;
+
+}
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+}
+main{
+    position: absolute;
+    display: flex;
+    padding-top: 10vh;
+    left: 50%;
+    transform: translate(-52%);
+}
+.conteiner_counter{
+    font-size: 50px;
+}
+div > button{
+    font-size: 50px;
+    margin-top: 12px;
+    background-color: rgba(40, 130, 247);
+    border-radius: 5px;
+    border-color: rgba(41, 41, 41, 0.562);
+    color: #fff;
+}
+div > button:hover{
+    
+}

@@ -1,41 +1,132 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --color--orange: #ea8658;
+  --color--white: #fff;
+  --color--purple: #5f56ab;
+  font-size: 16px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 32px;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input {
+  all: unset;
+  font-size: 1rem;
+}
+
+button {
+  all: unset;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+span {
+  font-weight: 900;
+}
+
+.orange {
+  color: var(--color--orange);
+}
+
+.purple {
+  color: var(--color--purple);
+}
+
+.white {
+  color: var(--color--white);
+}
+
+body {
+  background: #10121b;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100vw;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 25vh;
+}
+
+.button__container {
+  height: 50px;
+  width: 70%;
+  background: #1f232f;
+  border-radius: 4rem;
+  margin-top: 2rem;
+  display: flex;
+  max-width: 450px;
+}
+
+.button__container input {
+  width: 80%;
+  height: 100%;
+  padding-left: 2rem;
+  display: block;
+  box-sizing: border-box;
+}
+
+.button__container button {
+  width: 40%;
+  height: 100%;
+  border-radius: 0 4rem 4rem 0;
+  font-size: 1rem;
+}
+
+.button__container button:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #222;
+  transition: all 1s;
 }
 
 .card {
-  padding: 2em;
+  width: 300px;
+  height: auto;
+  position: relative;
+  margin-top: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.card img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  border-radius: 2rem;
+}
+
+.card .city__title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.card .city__info {
+  min-height: 80px;
+  max-width: 50%;
+  position: absolute;
+  top: 30%;
+  background: #261c32;
+  padding: 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.ml-1 {
+  margin-left: 1rem;
 }

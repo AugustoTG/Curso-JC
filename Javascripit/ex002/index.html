@@ -11,8 +11,9 @@
     <h1>Tooltip JS</h1>
     <form action="#">
         <div><input type="text" name="name" id="name" placeholder="Nome"></div>
-        <div><input type="text" name="end" id="end" placeholder="Endereço"></div>
-        <input type="submit" id="sub">
+        <div id="conteiner"><input type="text" name="end" id="end" placeholder="Endereço"> <div id="ajuda">Ao clicar aqui enviaremos o seu pedido!</div></div>
+        
+        <button id="sub" onmouseover="enviar()" onmouseleave="sair()">Confirmar</button>
     </form>
      <script src="index.js"></script>
 </body>

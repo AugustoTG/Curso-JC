@@ -5,6 +5,11 @@
     font-family: "Outfit", sans-serif;
 
   }
+  h1{
+    text-align: center;
+    color:#fff;
+    font-weight: 500;
+  }
   body{
     background-image: linear-gradient(#FF8100, #FFBA00);
     background-repeat: no-repeat;
@@ -12,6 +17,11 @@
   }
   #cidade__card{
     margin: auto;
+    text-align: center;
+    background-color: #fff;
+    width: 30vw;
+  }
+  #entrada{
     text-align: center;
   }
   button{

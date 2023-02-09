@@ -26,13 +26,22 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const cidadeCond = document.createElement("h3");
     cidadeCond.innerHTML = infoCidade.current.condition.text;
 
-    const minimaCidade = document.createElement("h4");
+    const minimaCidade = document.createElement("p");
     minimaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.mintemp_c;
 
-    const maximaCidade = document.createElement("h4");
+    const maximaCidade = document.createElement("p");
     maximaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.maxtemp_c;
 
-    card.append(cidadeTitulo, estado, pais, cidadeTemp,cidadeCond, minimaCidade, maximaCidade);
+    const sensacaoCidade = document.createElement("p");
+    sensacaoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].feelslike_c;
+
+    const umidadeCidade = document.createElement("p");
+    umidadeCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].humidity;
+
+    const ventoCidade = document.createElement("p");
+    ventoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].wind_kph;
+
+    card.append(cidadeTitulo, estado, pais, cidadeTemp,cidadeCond, minimaCidade, maximaCidade, sensacaoCidade, umidadeCidade, ventoCidade);
   };
   
   const buscar = async () => {
@@ -84,7 +93,7 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
         "gust_kph": 10.4
     },
     "forecast": {
-        "forecastday": [
+        "forecastday": [0]
             {
                 "date": "2023-02-08",
                 "date_epoch": 1675814400,

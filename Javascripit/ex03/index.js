@@ -27,9 +27,12 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     cidadeCond.innerHTML = infoCidade.current.condition.text;
 
     const minimaCidade = document.createElement("h4");
-    minimaCidade.innerHTML = infoCidade.forecast.forecastday.day.mintemp_c;
+    minimaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.mintemp_c;
 
-    card.append(cidadeTitulo, estado, pais, cidadeTemp,cidadeCond, minimaCidade);
+    const maximaCidade = document.createElement("h4");
+    maximaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.maxtemp_c;
+
+    card.append(cidadeTitulo, estado, pais, cidadeTemp,cidadeCond, minimaCidade, maximaCidade);
   };
   
   const buscar = async () => {

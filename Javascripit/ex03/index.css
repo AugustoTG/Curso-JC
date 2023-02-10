@@ -9,21 +9,45 @@
     text-align: center;
     color:#fff;
     font-weight: 500;
+    margin: 20px;
   }
   body{
     background-image: linear-gradient(#FF8100, #FFBA00);
     background-repeat: no-repeat;
     height: 100vh;
   }
-  #cidade__card{
+  #caixa__card{
     margin: auto;
     text-align: center;
     background-color: #fff;
-    width: 30vw;
+    width: 450px;
   }
+  #cidade__card{
+    text-align: left;
+  }
+  #cidade__card > p{
+    display: inline-flex;
+    margin-top: 20px;
+    color: #575656;
+  }
+  .margem{
+    margin-left: 35px;
+    
+  }
+  #cidade__card2{
+    text-align: left;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #cidade__card2 > h3{
+    display: inline-flex;
+  }
+ 
   #entrada{
     text-align: center;
   }
   button{
       
   }
+ 

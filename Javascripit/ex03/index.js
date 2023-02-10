@@ -8,23 +8,39 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
   };
   
   const popularDOM = (infoCidade) => {
+    //identificação 
     const card = document.getElementById("cidade__card");
     card.innerHTML = "";
   
     const cidadeTitulo = document.createElement("p");
     cidadeTitulo.innerHTML = infoCidade.location.name;
-    
+   
     const estado = document.createElement("p");
     estado.innerHTML =infoCidade.location.region;
-    
+
     const pais = document.createElement ("p");
     pais.innerHTML=infoCidade.location.country;
-  
+
+    cidadeTitulo.setAttribute('class', 'margem')
+
+    card.append(cidadeTitulo,', ', estado,' - ', pais);
+
+    // tempo
+    const card2 = document.getElementById("cidade__card2");
+    card2.innerHTML = "";
+
     const cidadeTemp = document.createElement("h3");
     cidadeTemp.innerHTML = infoCidade.current.temp_c;
 
     const cidadeCond = document.createElement("h3");
     cidadeCond.innerHTML = infoCidade.current.condition.text;
+
+    card2.append(cidadeTemp,'°C ', cidadeCond);
+    cidadeTemp.setAttribute('class', 'margem')
+
+    // minima e maxima 
+    const card3 = document.getElementById("cidade__card3");
+    card3.innerHTML = "";
 
     const minimaCidade = document.createElement("p");
     minimaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.mintemp_c;
@@ -32,16 +48,33 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const maximaCidade = document.createElement("p");
     maximaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.maxtemp_c;
 
+    card3.append(minimaCidade, maximaCidade);
+
+    //sensação
+    const card4 = document.getElementById("cidade__card4");
+    card4.innerHTML = "";
+
     const sensacaoCidade = document.createElement("p");
     sensacaoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].feelslike_c;
 
-    const umidadeCidade = document.createElement("p");
-    umidadeCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].humidity;
+    card4.append(sensacaoCidade);
 
+    //humidade
+    const card5 = document.getElementById("cidade__card5");
+    card5.innerHTML = "";
+
+    const humidadeCidade = document.createElement("p");
+    humidadeCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].humidity;
+
+    card5.append(humidadeCidade);
+
+    //vento
+    const card6 = document.getElementById("cidade__card6");
+    card6.innerHTML = "";
     const ventoCidade = document.createElement("p");
     ventoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].wind_kph;
 
-    card.append(cidadeTitulo, estado, pais, cidadeTemp,cidadeCond, minimaCidade, maximaCidade, sensacaoCidade, umidadeCidade, ventoCidade);
+    card6.append(ventoCidade);
   };
   
   const buscar = async () => {

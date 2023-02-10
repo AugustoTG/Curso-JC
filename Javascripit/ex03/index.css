@@ -36,14 +36,16 @@
   }
   #cidade__card2{
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.8em;
     margin-top: 20px;
     margin-bottom: 20px;
   }
   #cidade__card2 > h3{
     display: inline-flex;
   }
- 
+  #cidade__card3 > p{
+    display: inline-flex;
+  }
   #entrada{
     text-align: center;
   }

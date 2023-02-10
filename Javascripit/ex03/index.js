@@ -21,7 +21,7 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const pais = document.createElement ("p");
     pais.innerHTML=infoCidade.location.country;
 
-    cidadeTitulo.setAttribute('class', 'margem')
+    cidadeTitulo.setAttribute('class', 'margem');
 
     card.append(cidadeTitulo,', ', estado,' - ', pais);
 
@@ -36,7 +36,7 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     cidadeCond.innerHTML = infoCidade.current.condition.text;
 
     card2.append(cidadeTemp,'°C ', cidadeCond);
-    cidadeTemp.setAttribute('class', 'margem')
+    cidadeTemp.setAttribute('class', 'margem');
 
     // minima e maxima 
     const card3 = document.getElementById("cidade__card3");
@@ -45,10 +45,12 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const minimaCidade = document.createElement("p");
     minimaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.mintemp_c;
 
+    minimaCidade.setAttribute('class', 'margem');
+
     const maximaCidade = document.createElement("p");
     maximaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.maxtemp_c;
 
-    card3.append(minimaCidade, maximaCidade);
+    card3.append(minimaCidade, '\u{2B07} ', maximaCidade, '\u{2B06} ');
 
     //sensação
     const card4 = document.getElementById("cidade__card4");

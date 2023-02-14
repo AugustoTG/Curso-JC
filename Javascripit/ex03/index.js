@@ -50,16 +50,20 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const maximaCidade = document.createElement("p");
     maximaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.maxtemp_c;
 
-    card3.append(minimaCidade, '\u{2B07} ', maximaCidade, '\u{2B06} ');
+    maximaCidade.setAttribute('class', 'margem');
+
+    card3.append(minimaCidade, '    \u{2B07}', maximaCidade, '    \u{2B06}', );
 
     //sensação
     const card4 = document.getElementById("cidade__card4");
-    card4.innerHTML = "";
+    card4.innerHTML = " ";
 
     const sensacaoCidade = document.createElement("p");
     sensacaoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].feelslike_c;
 
-    card4.append(sensacaoCidade);
+    sensacaoCidade.setAttribute('class', 'margem');
+
+    card4.append('Sensação ', sensacaoCidade);
 
     //humidade
     const card5 = document.getElementById("cidade__card5");

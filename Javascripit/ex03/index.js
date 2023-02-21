@@ -8,6 +8,9 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
   };
   
   const popularDOM = (infoCidade) => {
+
+    const display = document.querySelector('.linha');
+    display.style.display = 'flex';
     //identificação 
     const card = document.getElementById("cidade__card");
     card.innerHTML = "";
@@ -52,16 +55,18 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const card5 = document.getElementById("cidade__card5");
     card5.innerHTML = "";
 
-    const humidadeCidade = document.createElement("p");
-    humidadeCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].humidity;
+    const umidadeCidade = document.createElement("p");
+    umidadeCidade.innerHTML = `<strong>Umidade</strong>${infoCidade.forecast.forecastday[0].hour[0].humidity}`;
+    
+    umidadeCidade.setAttribute('class', 'margem')
 
-    card5.append(humidadeCidade);
+    card5.append(umidadeCidade);
 
     //vento
     const card6 = document.getElementById("cidade__card6");
     card6.innerHTML = "";
     const ventoCidade = document.createElement("p");
-    ventoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].wind_kph;
+    ventoCidade.innerHTML = `<strong>Vento </strong>${infoCidade.forecast.forecastday[0].hour[0].wind_kph}`;
 
     card6.append(ventoCidade);
   };
@@ -71,7 +76,6 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const infoCidade = await buscarTemperaturaCidade(nomeCidade.value);
     popularDOM(infoCidade);
   };
-
 
 /*
 {

@@ -29,12 +29,17 @@
   }
   #cidade__card{
     text-align: left;
+    padding-left: 2rem;
   }
   #cidade__card > p{
     display: inline-flex;
     margin-top: 20px;
     color: #575656;
-    font-size: 1.2rem;;
+    font-size: 1.2rem;
+  }
+  strong{
+    color: #575656;
+    margin-left:1rem;
   }
   .margem{
     margin-left: 35px;
@@ -58,21 +63,16 @@
     font-weight: 500;
   }
   #cidade__card4 > p{
-    display: inline-flex;
-    color:black;
     font-weight: 500;
   }
   #cidade__card4{
-    display: inline;
-    position: absolute;
-    top: 212px;
-    color:#575656;
     font-size: 1.2rem;
-
+  }
+  .linha{
+    display: flex;
   }
   #cidade__card3{
     text-align: left;
-    color: #FF8100;
   }
   #entrada{
     text-align: center;

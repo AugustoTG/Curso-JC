@@ -13,29 +13,18 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     card.innerHTML = "";
   
     const cidadeTitulo = document.createElement("p");
-    cidadeTitulo.innerHTML = infoCidade.location.name;
-   
-    const estado = document.createElement("p");
-    estado.innerHTML =infoCidade.location.region;
-
-    const pais = document.createElement ("p");
-    pais.innerHTML=infoCidade.location.country;
-
-    cidadeTitulo.setAttribute('class', 'margem');
-
-    card.append(cidadeTitulo,', ', estado,' - ', pais);
+    cidadeTitulo.innerHTML = `${infoCidade.location.name}, ${infoCidade.location.region} - ${infoCidade.location.country}`;
+    
+    card.append(cidadeTitulo);
 
     // tempo
     const card2 = document.getElementById("cidade__card2");
     card2.innerHTML = "";
 
     const cidadeTemp = document.createElement("h3");
-    cidadeTemp.innerHTML = infoCidade.current.temp_c;
+    cidadeTemp.innerHTML = `${infoCidade.current.temp_c}°C <strong>${infoCidade.current.condition.text}</strong> `;
 
-    const cidadeCond = document.createElement("h3");
-    cidadeCond.innerHTML = infoCidade.current.condition.text;
-
-    card2.append(cidadeTemp,'°C ', cidadeCond);
+    card2.append(cidadeTemp);
     cidadeTemp.setAttribute('class', 'margem');
 
     // minima e maxima 
@@ -43,27 +32,21 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     card3.innerHTML = "";
 
     const minimaCidade = document.createElement("p");
-    minimaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.mintemp_c;
+    minimaCidade.innerHTML = `\u{2B07} ${infoCidade.forecast.forecastday[0].day.mintemp_c} \u{2B06} ${infoCidade.forecast.forecastday[0].day.maxtemp_c}`;
 
     minimaCidade.setAttribute('class', 'margem');
 
-    const maximaCidade = document.createElement("p");
-    maximaCidade.innerHTML = infoCidade.forecast.forecastday[0].day.maxtemp_c;
-
-    maximaCidade.setAttribute('class', 'margem');
-
-    card3.append(minimaCidade, '    \u{2B07}', maximaCidade, '    \u{2B06}', );
+    card3.append(minimaCidade);
 
     //sensação
     const card4 = document.getElementById("cidade__card4");
     card4.innerHTML = " ";
 
     const sensacaoCidade = document.createElement("p");
-    sensacaoCidade.innerHTML = infoCidade.forecast.forecastday[0].hour[0].feelslike_c;
+    sensacaoCidade.innerHTML = `<strong>Sensação</strong> ${infoCidade.forecast.forecastday[0].hour[0].feelslike_c}`;
+    //sensacaoCidade.setAttribute('class', 'margem');
 
-    sensacaoCidade.setAttribute('class', 'margem');
-
-    card4.append('Sensação ', sensacaoCidade);
+    card4.append(sensacaoCidade);
 
     //humidade
     const card5 = document.getElementById("cidade__card5");

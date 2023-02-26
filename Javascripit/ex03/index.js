@@ -1,6 +1,6 @@
 const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const dadosCidade = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?q=${nomeDaCidade}&key=7fd89369164a44f29d4113450230402&days=5`,
+      `http://api.weatherapi.com/v1/forecast.json?q=${nomeDaCidade}&key=7fd89369164a44f29d4113450230402&days=5&lang=pt`,
       { mode: "cors" }
     );
     const cidadeInformacao = await dadosCidade.json();
@@ -11,6 +11,8 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
 
     const display = document.querySelector('.linha');
     display.style.display = 'flex';
+    const display2 = document.querySelector('.linha2');
+    display2.style.display = 'flex';
     //identificação 
     const card = document.getElementById("cidade__card");
     card.innerHTML = "";
@@ -33,9 +35,8 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     // minima e maxima 
     const card3 = document.getElementById("cidade__card3");
     card3.innerHTML = "";
-
     const minimaCidade = document.createElement("p");
-    minimaCidade.innerHTML = `\u{2B07} ${infoCidade.forecast.forecastday[0].day.mintemp_c} \u{2B06} ${infoCidade.forecast.forecastday[0].day.maxtemp_c}`;
+    minimaCidade.innerHTML = `<span>\u{2B07}</span> ${infoCidade.forecast.forecastday[0].day.mintemp_c}°C <span>\u{2B07}</span> ${infoCidade.forecast.forecastday[0].day.maxtemp_c}°C`;
 
     minimaCidade.setAttribute('class', 'margem');
 
@@ -46,7 +47,7 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     card4.innerHTML = " ";
 
     const sensacaoCidade = document.createElement("p");
-    sensacaoCidade.innerHTML = `<strong>Sensação</strong> ${infoCidade.forecast.forecastday[0].hour[0].feelslike_c}`;
+    sensacaoCidade.innerHTML = `<strong>Sensação</strong> ${infoCidade.forecast.forecastday[0].hour[0].feelslike_c}°C`;
     //sensacaoCidade.setAttribute('class', 'margem');
 
     card4.append(sensacaoCidade);
@@ -56,7 +57,7 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     card5.innerHTML = "";
 
     const umidadeCidade = document.createElement("p");
-    umidadeCidade.innerHTML = `<strong>Umidade</strong>${infoCidade.forecast.forecastday[0].hour[0].humidity}`;
+    umidadeCidade.innerHTML = `<strong>Umidade </strong> ${infoCidade.forecast.forecastday[0].hour[0].humidity}%`;
     
     umidadeCidade.setAttribute('class', 'margem')
 
@@ -66,7 +67,7 @@ const buscarTemperaturaCidade = async (nomeDaCidade) => {
     const card6 = document.getElementById("cidade__card6");
     card6.innerHTML = "";
     const ventoCidade = document.createElement("p");
-    ventoCidade.innerHTML = `<strong>Vento </strong>${infoCidade.forecast.forecastday[0].hour[0].wind_kph}`;
+    ventoCidade.innerHTML = `<strong>Vento</strong>  ${infoCidade.forecast.forecastday[0].hour[0].wind_kph} Km/h`;
 
     card6.append(ventoCidade);
   };

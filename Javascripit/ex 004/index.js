@@ -9,3 +9,4 @@ function number(){
     const guessNumber = Math.round(Math.random()* (100-0) +0);
     return guessNumber;
 }
+

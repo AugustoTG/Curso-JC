@@ -11,12 +11,21 @@ function number(){
     return guessNumber;
 }
 console.log(number());
-
-
-if(getNumber() < number()){
+let i = getNumber()
+while(i !== number()){
+    if(getNumber() < number()){
+        console.log("O numero é maior ")
+    }else if(getNumber() > number()){
+        console.log("O numero é menor ")
+    }else{
+        console.log("vc acertou! ")
+    }
+    i++
+}
+/*if(getNumber() < number()){
     console.log("O numero é maior ")
 }else if(getNumber() > number()){
     console.log("O numero é menor ")
 }else{
     console.log("vc acertou! ")
-}
+}*/

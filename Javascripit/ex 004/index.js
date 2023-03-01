@@ -1,7 +1,8 @@
-
+    let resut = document.querySelector('#result');
+    let clue = document.querySelector('#clue');
 function getNumber(){
-    let num = document.querySelector('#inputNumber').value;
-    num = Number(num)
+    let num = document.querySelector('#inputNumber');
+    num = Number(num.value)
     return num;
 }
 
@@ -9,4 +10,13 @@ function number(){
     const guessNumber = Math.round(Math.random()* (100-0) +0);
     return guessNumber;
 }
+console.log(number());
 
+
+if(getNumber() < number()){
+    console.log("O numero é maior ")
+}else if(getNumber() > number()){
+    console.log("O numero é menor ")
+}else{
+    console.log("vc acertou! ")
+}

@@ -7,11 +7,11 @@ function getNumber(){
 
 }
 
-function number(){
-    const guessNumber = Math.round(Math.random()* (100-0) +0);
+function number(max){
+    const guessNumber = Math.round(Math.random()* max);
     return guessNumber;
 }
-console.log(number());
+console.log(number(100));
 let i = getNumber()
 while(i !== number()){
     if(getNumber() < number()){

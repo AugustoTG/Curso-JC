@@ -7,25 +7,10 @@ function getNumber(){
 
 }
 
-function number(max){
-    const guessNumber = Math.round(Math.random()* max);
-    return guessNumber;
+function guessNumber(max){
+    return Math.round(Math.random() * max);
 }
-console.log(number(100));
-let i = getNumber()
-while(i !== number()){
-    if(getNumber() < number()){
-        console.log("O numero é maior ")
-    }else if(getNumber() > number()){
-        console.log("O numero é menor ")
-    }
-    continue
-    i = i;
+console.log(guessNumber(100));
+for(let i = getNumber() ; i !== guessNumber(100); i++){
+    console.log("ahh!")
 }
-/*if(getNumber() < number()){
-    console.log("O numero é maior ")
-}else if(getNumber() > number()){
-    console.log("O numero é menor ")
-}else{
-    console.log("vc acertou! ")
-}*/

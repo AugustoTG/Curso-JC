@@ -8,20 +8,17 @@ function resultado(){
     const h3 = document.createElement('h3')
     result.appendChild(h3);
     result.innerHTML = "..."
+    const gerarMoeda = () =>{
+        setTimeout(function(){
+        rodando = true;
+        result.innerHTML = moeda[caraCoroa(1)];
+        rodando = false;
+        },500);
+    };
+    if(rodando === false){
+        rodando = true;
+        gerarMoeda();
+    }
 
-
-const gerarMoeda = () =>{
-
- setTimeout(function(){
-    rodando = true;
-    result.innerHTML = moeda[caraCoroa(1)];
-    rodando = false;
-},500);
-};
-if(rodando === false){
-    rodando = true;
-    gerarMoeda();
-}
-
-clearTimeout(gerarMoeda);
+    clearTimeout(gerarMoeda);
 }

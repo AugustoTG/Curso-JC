@@ -11,6 +11,10 @@
   --primary-color: rgb(17, 86, 102);
   --primary-color-darker: rgb(9, 48, 56);
 }
+h1{
+  text-align: center;
+  padding: 10px;
+}
 body {
   margin: 0;
   padding: 0;

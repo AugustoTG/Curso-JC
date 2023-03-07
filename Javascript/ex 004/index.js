@@ -10,7 +10,5 @@ function getNumber(){
 function guessNumber(max){
     return Math.round(Math.random() * max);
 }
-console.log(guessNumber(100));
-for(let i = getNumber() ; i !== guessNumber(100); i++){
-    console.log("ahh!")
-}
+
+

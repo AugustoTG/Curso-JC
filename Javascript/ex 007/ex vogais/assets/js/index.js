@@ -1,3 +1,4 @@
+const palavras = ['sagaz', 'negro', 'plena', 'poder', 'anexo', 'brado'];
 const result = document.querySelector('p')
 console.log(result)
 const verificador = () => {

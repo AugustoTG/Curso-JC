@@ -6,6 +6,8 @@ const verificador = () => {
         console.log(input.length)
         return alert('Insira apenas uma vogal ou consoante')
     }
+    const vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    
     if(input.value === 'a' || input.value === 'e' || input.value === 'i' || input.value === 'o' || input.value === 'u' || input.value === 'A' || input.value === 'E' || input.value === 'I' || input.value === 'O' || input.value === 'U'){
         return result.innerHTML = `${input.value} é uma vogal!`
     }else{

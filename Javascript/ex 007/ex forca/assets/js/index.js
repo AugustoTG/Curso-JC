@@ -17,8 +17,12 @@ const verificador = () => {
             alert('Insira apenas uma letra ou se você souber a resposta, escreva!')
         };
     };
-    if(palavra.search(/[A-Z]/g) === input.value){
-        return result.innerText = input.value
-    }
+    
+
 };
-console.log(palavra.search(input.value)
+
+const letra = [];
+
+const letras = (e) => {
+    console.log(e)
+}

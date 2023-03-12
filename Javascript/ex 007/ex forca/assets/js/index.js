@@ -11,11 +11,14 @@ const verificador = () => {
     const input = document.querySelector('#texto');
     if(input.value === palavra){
         inf.innerText = 'Parabéns você acertou!'
-        return result.innerText = palavra, inf.innerText ='Parabéns você acertou!';
+        return result.innerText = palavra
     }else if(input.value !== palavra){
         if(input.value.length !== 1){
             alert('Insira apenas uma letra ou se você souber a resposta, escreva!')
         };
     };
-    
+    if(palavra.search(/[A-Z]/g) === input.value){
+        return result.innerText = input.value
+    }
 };
+console.log(palavra.search(input.value)

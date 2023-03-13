@@ -14,7 +14,7 @@ const verificador = () => {
     }
 };
 const vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
-    for(vogal of vagais){
-        vogal += vagais
+    for(let vogal of vagais){
+        console.log(vogal);
     }
-    console.log(vogal);
+   

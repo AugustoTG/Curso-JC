@@ -62,4 +62,11 @@ form button {
 form button:hover {
   background: var(--primary-color-darker);
 }
-
+h5{
+  display: inline;
+  margin-left: 20px;
+}
+span{
+  font-size: 1.9rem;
+  font-weight: 500;
+}

@@ -18,7 +18,7 @@ const verificador = () => {
             alert('Insira apenas uma letra ou se você souber a resposta, escreva!')
         };
     };
-    
+    let erro = 5;
     for(let letras of palavra){
         if(letras === input.value && letras === palavra[0]){
             result[0].innerText = letras;
@@ -30,11 +30,9 @@ const verificador = () => {
             result[3].innerText = letras;
         }else if(letras === input.value && letras === palavra[4]){
             result[4].innerText = letras;
-        };
-         if(letras != input.value){
-            let erro = 5;
+        }else if(letras != input.value){
             erro --;
-            return tentativas.innerText = `Você errou ainda restam ${erro} tentativas.`
-        }
+            tentativas.innerText = `Você errou ainda restam ${erro} tentativas.`
+        };
     };
 };

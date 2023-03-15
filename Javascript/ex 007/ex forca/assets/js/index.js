@@ -29,6 +29,10 @@ const verificador = () => {
     };
     if(input.value === palavra){
         inf.innerText = 'Parabéns você acertou!'
+        result[1].innerText = ''
+        result[2].innerText = ''
+        result[3].innerText = ''
+        result[4].innerText = ''
         return result[0].innerText = palavra
     }else if(input.value !== palavra){
         if(input.value.length !== 1){

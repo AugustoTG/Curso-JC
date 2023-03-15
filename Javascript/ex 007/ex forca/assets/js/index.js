@@ -1,4 +1,5 @@
 const palavras = ['sagaz', 'negro', 'plena', 'poder', 'anexo', 'brado'];
+let erro = 5;
 const result = [document.querySelector('.letras1'), document.querySelector('.letras2'),document.querySelector('.letras3'),document.querySelector('.letras4'),document.querySelector('.letras5')];
 const tentativas = document.querySelector('h5')
 const inf = document.querySelector('p')
@@ -10,29 +11,33 @@ console.log(palavra);
 
 const verificador = () => {
     const input = document.querySelector('#texto');
+    if(erro === 0){
+        tentativas.innerText = `Você perdeu!`
+    }
+    for(let letras of palavra){
+        if(letras === input.value && letras === palavra[0]){
+            return result[0].innerText = letras;
+        }else if(letras === input.value && letras === palavra[1]){
+            return result[1].innerText = letras;
+        }else if(letras === input.value && letras === palavra[2]){
+            return result[2].innerText = letras;
+        }else if(letras === input.value && letras === palavra[3]){
+            return result[3].innerText = letras;
+        }else if(letras === input.value && letras === palavra[4]){
+            return result[4].innerText = letras;
+        };
+    };
     if(input.value === palavra){
         inf.innerText = 'Parabéns você acertou!'
         return result[0].innerText = palavra
     }else if(input.value !== palavra){
         if(input.value.length !== 1){
             alert('Insira apenas uma letra ou se você souber a resposta, escreva!')
-        };
-    };
-    let erro = 5;
-    for(let letras of palavra){
-        if(letras === input.value && letras === palavra[0]){
-            result[0].innerText = letras;
-        }else if(letras === input.value && letras === palavra[1]){
-            result[1].innerText = letras;
-        }else if(letras === input.value && letras === palavra[2]){
-            result[2].innerText = letras;
-        }else if(letras === input.value && letras === palavra[3]){
-            result[3].innerText = letras;
-        }else if(letras === input.value && letras === palavra[4]){
-            result[4].innerText = letras;
-        }else if(letras != input.value){
+        }else if(input.value !== palavra){
             erro --;
+            console.log(erro)
             tentativas.innerText = `Você errou ainda restam ${erro} tentativas.`
         };
     };
+
 };

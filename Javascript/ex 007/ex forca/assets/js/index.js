@@ -7,8 +7,6 @@ function guessNumber(max){
     return Math.floor(Math.random() * max);
 }
 const palavra = palavras[guessNumber(6)];
-console.log(palavra);
-
 const verificador = () => {
     const input = document.querySelector('#texto');
     if(erro === 0){
@@ -39,7 +37,6 @@ const verificador = () => {
             alert('Insira apenas uma letra ou se você souber a resposta, escreva!')
         }else if(input.value !== palavra){
             erro --;
-            console.log(erro)
             tentativas.innerText = `Você errou ainda restam ${erro} tentativas.`
         };
     };

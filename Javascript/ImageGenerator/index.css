@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background: #0d121d;
+  }
+  
+  h1 {
+    color: #fff;
+    font-size: 64px;
+  }
+  
+  main {
+    padding: 4rem 6rem;
+  }
+  
+  .card {
+    color: #fff;
+  }
+  
+  #hero {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  #hero img {
+    width: 328px;
+    height: 339px;
+    border-radius: 1rem;
+  }
+  
+  .info {
+    padding-top: 2rem;
+  }
+    #prompt{
+        height: 25px;
+        width: 200px;
+    }
+
+    button{
+        height: 30px;
+    }
